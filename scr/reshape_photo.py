@@ -29,3 +29,7 @@ def scale_image(input_image_path,
     print('The scaled image size is {wide} wide x {height} '
           'high'.format(wide=width, height=height))
 
+# scale_image(input_image_path = r'D:\diplom\faces\1.jpg',
+#             output_image_path = r'D:\diplom\faces\1.jpg',
+#             width=48,
+#             height= 48)

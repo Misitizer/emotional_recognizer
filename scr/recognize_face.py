@@ -27,11 +27,10 @@ def save_faces(cropped):
     for i, face in enumerate(cropped):
         cv2.imwrite(faces_path+"\{}.jpg".format(str(i+1)), face)
 
-image_path = r'D:\diplom\images\people.jpg'
-image = cv2.imread(image_path)
 
-cropped = cropFace(image)
-save_faces(cropped)
-# for i, face in enumerate(cropped):
-#     viewImage(face, str(i+1))
-# # print(image_path)
+#
+# cropped = cropFace(image)
+# save_faces(cropped)
+# # for i, face in enumerate(cropped):
+# #     viewImage(face, str(i+1))
+# # # print(image_path)
