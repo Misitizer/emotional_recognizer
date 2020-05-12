@@ -17,13 +17,22 @@ reshape_photo.scale_image(input_image_path = r'D:\diplom\faces\1.jpg',
              width=48,
              height= 48)
 
+face_path = r'D:\diplom\faces\1.jpg'
+face = cv2.imread(face_path, 0)
+
+f = face.reshape(1, 48, 48, 1)
+
 reloaded = load_model('emotional_model.h5', custom_objects={'swish_activation': swish_activation})
 
 emotion = ['Angry', 'Disgust', 'Fear', 'Happy', 'Sad', 'Surprise', 'Neutral']
 predict = reloaded.predict(f)
 print(emotion[np.argmax(predict)])
 
+
+fig, (ax1, ax2) = plt.subplots(1,2)
+
 names = np.arange(7)
-plt.bar(names, height=predict[0])
-plt.xticks(names, ['Angry', 'Disgust', 'Fear', 'Happy', 'Sad', 'Surprise', 'Neutral'])
+ax1.bar(names, height=predict[0]*100)
+ax1.set_xticks(names, emotion)
+ax2.imshow(face.reshape((48,48)), interpolation = 'none', cmap = 'gray')
 plt.show()
