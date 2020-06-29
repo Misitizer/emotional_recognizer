@@ -10,9 +10,9 @@ import telebot
 def swish_activation(x):
     return (K.sigmoid(x) * x)
 
-bot = telebot.TeleBot('1136311061:AAG2gVnnJTCpN6PNX6aDRaov4pOWpCSWzjo')
+bot = telebot.TeleBot('your token')
 
-telebot.apihelper.proxy = {'https':'163.172.189.32:8811'}
+telebot.apihelper.proxy = {'your proxy'}
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
